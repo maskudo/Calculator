@@ -45,7 +45,6 @@ button{
     font-size: 30px;
     height: 60px;
     width: 75px;
-    
 }
 
 .bottom-buttons{
@@ -55,10 +54,21 @@ button{
     grid-auto-rows:auto;
     
 }
-/* .sign{
-    background-color: lightblue;
+/*
+.sign{
+    background-color:   #AAAAAA;
+    color: black;
+    border-style: none;
+    border-radius: 5px;
     
+}
+.sign:hover{
+    background-color: #0074d9;
+}
+.sign:active{
+    background-color: #0074d9;
 }
 #equal{
     background-color: #900000;
-} */
+} 
+*/
