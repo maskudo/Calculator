@@ -70,10 +70,14 @@ numbers.forEach(item =>{
         }
         else{
             if(operator===''){
-                num1 += item.textContent
+                if(!(num1.includes('.') && item.textContent === '.')){
+                    num1 += item.textContent
+                }
             }
             else{
-                num2 += item.textContent
+                if(!(num2.includes('.') && item.textContent ==='.')){
+                    num2 += item.textContent
+                }
             }
         }
         display()
