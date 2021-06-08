@@ -3,9 +3,8 @@ const topButtons = document.querySelector('.top-buttons')
 const numbers = botButtons.querySelectorAll('button')
 const clrDel = topButtons.querySelectorAll('button')
 const screen = document.querySelector(".screen")
+const buttons = document.querySelectorAll('button')
 
-screen.style.padding = "10px"
-screen.style.fontSize = "25px"
 
 let num1 = '', num2 = '', operator = ''
 
@@ -46,6 +45,7 @@ function Delete(){
     }
     
 }
+
 
 numbers.forEach(item =>{
     item.addEventListener('click',()=>{
@@ -96,3 +96,27 @@ clrDel.forEach(item =>{
     })
 })
 
+//keyboard support
+document.addEventListener('keydown',(e) => {
+    if((e.key>=0 && e.key<=9) 
+        || e.key=='.' ||e.key=='/' || e.key=='*' ||e.key=='-' ||e.key=='+'){
+        e.preventDefault()
+        buttons.forEach(item => {
+            if(item.id === e.key){
+                item.click()
+            }
+        })
+    }
+    else if(e.key=="Enter"){
+        e.preventDefault()
+        document.getElementById('=').click()
+    }
+    else if(e.key=='Backspace'){
+        e.preventDefault()
+        document.getElementById('del').click()
+    }
+    else if(e.key=='Escape'){
+        e.preventDefault()
+        document.getElementById('clr').click()
+    }
+})
